@@ -16,6 +16,9 @@ const validateUserSignupRequest = async (user) => {
     if (!user || !user.name || !user.password || !user.email) {
         throw new AppError(ERRORS.MISSING_FIELDS, 400);
     }
+    user.name = user.name.trim();
+    user.email = user.email.trim();
+    user.password = user.password.trim();
 
     if (typeof user.name !== 'string' || typeof user.email !== 'string' || typeof user.password !== 'string') {
         throw new AppError(ERRORS.INVALID_STRING_FIELDS, 400);
@@ -49,3 +52,4 @@ const validateUserSignupRequest = async (user) => {
 };
 
 export default validateUserSignupRequest;
+

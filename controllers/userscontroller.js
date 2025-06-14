@@ -13,6 +13,21 @@ class UsersController {
       });
     }
   }
+  static async login(req,res){
+    try{
+      const result = await UserManager.login(req.body);
+      res.status(201).json(result);
+
+    }
+    catch(err){
+      console.error('login Error:', err);
+
+      res.status(err.statusCode || 500).json({
+        success: false,
+        message: err.message || 'login failed',
+      });
+    }
+  }
 }
 
 export default UsersController;

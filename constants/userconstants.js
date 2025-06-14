@@ -24,6 +24,7 @@ const UserConstants = Object.freeze({
     SIGNUP_FAILED: "Signup failed",
     PASSWORD_HASHING_FAILED: "Password Hasing Failed",
     EXISTING_USER: "Email Already Exists",
+    NOT_EXISTING_USER: "User Email or Password is not valid ",
     FAILED_TO_CREATE_USER: "FAILED TO CREATE USER",
   }
 });
