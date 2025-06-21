@@ -6,6 +6,7 @@ import AppError from '../utils/apperror.js';
 import UserConstants from "../constants/userconstants.js"
 import isPasswordHashMatch from '../utils/verifyHashPassword.js';
 import generateToken from '../utils/generateJWTToken.js';
+import getUserPayload from '../utils/getuserpayload.js';
 class UserManager {
   static async signup(user) {
     validateUserSignupRequest(user);
@@ -53,6 +54,20 @@ class UserManager {
     }
   };
 }
+  static async me(req) {
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+      throw new Error('No token provided.');
+    }
+
+    const token = authHeader.split(' ')[1]; // Extract the raw token
+    const payload = getUserPayload(token);      // Decode it with utility
+    return {
+      message: "User retrieved successfully",
+      user: payload, // id, email, name etc. from token
+    };
+}
+
 
 }
 

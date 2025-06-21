@@ -13,6 +13,7 @@ class MoviesController {
       });
     }
   }
+
   static async listMovies(req, res, next) {
     try {
       const result = await MoviesManager.listmovies(req);
@@ -25,6 +26,20 @@ class MoviesController {
       });
     }
   }
+
+  static async getlist(req, res, next) {
+    try {
+      const result = await MoviesManager.getUserLists(req);
+      res.status(200).json(result);
+    } catch (err) {
+      console.error('Get List Error:', err);
+      res.status(err.statusCode || 500).json({
+        success: false,
+        message: err.message || 'Fetching lists failed',
+      });
+    }
+  }
 }
 
 export default MoviesController;
+

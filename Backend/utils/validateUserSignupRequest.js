@@ -1,4 +1,4 @@
-import AppError from "../utils/apperror.js";
+import AppError from "./apperror.js";
 import UserConstants from "../constants/userconstants.js";
 
 const validateUserSignupRequest = async (user) => {

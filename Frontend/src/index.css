@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Ensure the app can take full screen height */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Optional: Set a default font */
+body {
+  @apply font-sans bg-gray-100;
+}

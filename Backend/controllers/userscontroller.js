@@ -28,6 +28,21 @@ class UsersController {
       });
     }
   }
+  static async me(req,res){
+    try{
+      const result = await UserManager.me(req);
+      res.status(201).json(result);
+
+    }
+    catch(err){
+      console.error('User Info Error:', err);
+
+      res.status(err.statusCode || 500).json({
+        success: false,
+        message: err.message || 'User Info failed',
+      });
+    }
+  }
 }
 
 export default UsersController;

@@ -13,7 +13,6 @@ class MoviesManager {
     }
 
     const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.TMDB_API_KEY}&query=${encodeURIComponent(query)}`;
-
     const response = await axios.get(url);
 
     if (!response.data || !response.data.results || response.data.results.length === 0) {
@@ -25,7 +24,6 @@ class MoviesManager {
 
   static async listmovies(req) {
     validateMoviesListInput(req.body);
-
     const { name, tags = [], description, movies } = req.body;
     const userId = req.user.id;
 
@@ -50,7 +48,19 @@ class MoviesManager {
       data: newList
     };
   }
+
+  static async getUserLists(req) {
+    const userId = req.user.id;
+    const userLists = await MoviesHandler.fetchListsByUserId(userId);
+
+    return {
+      success: true,
+      message: "Fetched user lists successfully",
+      data: userLists,
+    };
+  }
 }
 
 export default MoviesManager;
+
 

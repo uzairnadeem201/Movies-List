@@ -1,4 +1,4 @@
-import AppError from '../utils/apperror.js';
+import AppError from './apperror.js';
 import MoviesConstants from '../constants/moviesconstants.js';
 
 export function validateMoviesListInput(body) {

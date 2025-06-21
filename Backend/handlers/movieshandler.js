@@ -14,6 +14,10 @@ class MoviesHandler {
     return newList;
   }
 
+  static async fetchListsByUserId(userId) {
+    return await List.find({ userId });
+  }
 }
 
 export default MoviesHandler;
+

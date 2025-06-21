@@ -6,7 +6,7 @@ const generateToken = (id,email,name) => {
   };
 
   const secret = process.env.JWT_SECRET; 
-  const options = { expiresIn: process.env.EXPIRES_IN };
+  const options = { expiresIn: process.env.EXPIRE_IN };
 
   const token = jwt.sign(payload, secret, options);
   return token;
