@@ -1,16 +1,17 @@
-// pages/Dashboard.tsx
 import React from "react";
 import NavBar from "../components/NavBar"; // adjust path as per your structure
 import Footer from "../components/Footer";
-import DashboardMain from "../components/Dashboard";
+import List from "../components/List";
 
-const Dashboard: React.FC = () => {
+const GetList: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-black">
       {/* Include the navbar at the top */}
-    <DashboardMain/>
+     
+      <List />
+      
     </div>
   );
 };
 
-export default Dashboard;
+export default GetList;

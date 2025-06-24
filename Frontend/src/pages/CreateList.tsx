@@ -1,16 +1,15 @@
-// pages/Dashboard.tsx
 import React from "react";
 import NavBar from "../components/NavBar"; // adjust path as per your structure
 import Footer from "../components/Footer";
-import DashboardMain from "../components/Dashboard";
+import NewListForm from "../components/CreateList";
 
-const Dashboard: React.FC = () => {
+const CreateList: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-black">
       {/* Include the navbar at the top */}
-    <DashboardMain/>
+      <NewListForm />
     </div>
   );
 };
 
-export default Dashboard;
+export default CreateList;

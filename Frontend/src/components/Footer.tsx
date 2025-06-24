@@ -7,8 +7,6 @@ const Footer: React.FC = () => {
     <Box
       component="footer"
       sx={{
-        position: "absolute",
-        bottom: 0,
         width: "100%",
         backgroundColor: "#1c1c1c",
         paddingY: 3,
@@ -85,4 +83,5 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+
 
